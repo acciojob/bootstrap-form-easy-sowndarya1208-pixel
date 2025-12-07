@@ -1,16 +1,132 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccioJob Intern Application Form</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="cdn.jsdelivr.net" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Intern Application Form</h2>
+        <!-- 
+            Add 'needs-validation' class to the form tag and the 'novalidate' attribute
+            to enable Bootstrap's custom validation styles.
+        -->
+        <form class="row g-3 needs-validation" novalidate>
+            
+            <!-- First Name Field -->
+            <div class="col-md-6">
+                <label for="first-name-input" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="first-name-input" required>
+                <!-- Invalid feedback text -->
+                <div class="invalid-feedback">
+                    Please enter your first name.
+                </div>
+            </div>
+
+            <!-- Last Name Field -->
+            <div class="col-md-6">
+                <label for="last-name-input" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="last-name-input" required>
+                <!-- Invalid feedback text -->
+                <div class="invalid-feedback">
+                    Please enter your last name.
+                </div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="col-md-12">
+                <label for="email-input" class="form-label">Email</label>
+                <!-- Use type="email" for proper input type -->
+                <input type="email" class="form-control" id="email-input" required>
+                <!-- Invalid feedback text -->
+                <div class="invalid-feedback">
+                    Please enter a valid email address.
+                </div>
+            </div>
+
+            <!-- College Name Field -->
+            <div class="col-md-8">
+                <label for="college-input" class="form-label">College Name</label>
+                <input type="text" class="form-control" id="college-input" required>
+                <!-- Invalid feedback text -->
+                <div class="invalid-feedback">
+                    Please enter your college name.
+                </div>
+            </div>
+
+            <!-- Graduation Year Dropdown -->
+            <div class="col-md-4">
+                <label for="graduation-year-select" class="form-label">Graduation Year</label>
+                <!-- Use select tag for dropdown menu -->
+                <select class="form-select" id="graduation-year-select" required>
+                    <option selected disabled value="">Choose...</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+                 <div class="invalid-feedback">
+                    Please select a graduation year.
+                </div>
+            </div>
+
+             <!-- Roll No Field -->
+             <div class="col-md-12">
+                <label for="roll-no-input" class="form-label">Roll No</label>
+                <input type="text" class="form-control" id="roll-no-input" required>
+                <!-- Invalid feedback text -->
+                <div class="invalid-feedback">
+                    Please enter your roll number.
+                </div>
+            </div>
+
+            <!-- Condition Checkbox -->
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="conditions-checkbox" required>
+                    <label class="form-check-label" for="conditions-checkbox">
+                        Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Submit Form</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Include Bootstrap JS (optional, but good practice) -->
+    <script src="cdn.jsdelivr.net" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Custom JavaScript for form validation activation -->
+    <script>
+        (function () {
+            'use strict'
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
 
 </body>
-
 </html>
